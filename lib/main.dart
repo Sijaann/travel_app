@@ -12,7 +12,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: onBoardingScreen(),
+      home: OnBoardingScreen(),
     );
   }
 }
