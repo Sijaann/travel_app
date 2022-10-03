@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/app_large_text.dart';
+import 'package:travel_app/utils/app_text.dart';
+import 'package:travel_app/utils/colors.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -28,9 +31,28 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     fit: BoxFit.cover),
               ),
               child: Container(
-                padding: const EdgeInsets.only(top: 150, right: 20, left: 20),
+                margin: const EdgeInsets.only(top: 150, right: 20, left: 20),
                 child: Column(
-                  children: [],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppLargeText(text: "Trips"),
+                    AppText(
+                      text: "Mountain",
+                      size: 30.0,
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Container(
+                      width: 215,
+                      child: AppText(
+                        text: "Mountain hikes give you an incredible sense of"
+                            " freedom along with endurance tests",
+                        color: AppColors.textColor2,
+                        size: 14.0,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );
