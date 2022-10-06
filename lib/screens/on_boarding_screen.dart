@@ -3,6 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/utils/app_large_text.dart';
 import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
+import 'package:travel_app/utils/responsive_button.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -42,7 +43,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          //Large Text "Trip"
                           AppLargeText(text: "Trips"),
+
+                          //App Text "Mou"
                           AppText(
                             text: "Mountain",
                             size: 30.0,
@@ -50,6 +54,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           SizedBox(
                             height: 10.0,
                           ),
+
+                          //Small Text below Big Text
                           Container(
                             width: 215,
                             child: AppText(
@@ -60,6 +66,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               size: 14.0,
                             ),
                           ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          ResponsiveButton(),
                         ],
                       ),
                     ],
@@ -67,6 +77,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               );
             }),
+
+        //Page Indicator
         Container(
           alignment: Alignment(0.75, -0.55),
           child: SmoothPageIndicator(
