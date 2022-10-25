@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/app_large_text.dart';
+import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 30,
             ),
 
             //Discover Text
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
-                          margin: const EdgeInsets.only(right: 20, top: 10),
+                          margin: const EdgeInsets.only(right: 15, top: 10),
                           width: 200,
                           height: 300,
                           decoration: BoxDecoration(
@@ -104,6 +105,63 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Text("BYE"),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 10, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppLargeText(
+                    text: "Explore More",
+                    size: 22,
+                  ),
+                  AppText(
+                    text: "See all",
+                    color: AppColors.textColor1,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 100,
+              width: double.maxFinite,
+              margin: const EdgeInsets.only(left: 20),
+              child: ListView.builder(
+                  itemCount: 4,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 30),
+                      child: Column(
+                        children: [
+                          Container(
+                            //margin: const EdgeInsets.only(right: 50),
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage("images/mountain.jpg"),
+                                  fit: BoxFit.cover),
+                            ),
+                          ),
+                          Container(
+                            child: AppText(
+                              text: "Kayaking",
+                              color: AppColors.textColor2,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
             )
           ],
         ),
