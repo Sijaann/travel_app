@@ -3,6 +3,7 @@ import 'package:travel_app/utils/app_buttons.dart';
 import 'package:travel_app/utils/app_large_text.dart';
 import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
+import 'package:travel_app/utils/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -82,7 +83,7 @@ class _DetailPageState extends State<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppLargeText(
-                          text: "Sweden",
+                          text: "Pokhara",
                           color: Colors.black.withOpacity(0.8),
                         ),
                         AppLargeText(
@@ -205,8 +206,53 @@ class _DetailPageState extends State<DetailPage> {
                     SizedBox(
                       height: 20.0,
                     ),
+
+                    //Description TEXT
+                    AppLargeText(
+                      text: "Description",
+                      color: Colors.black.withOpacity(0.8),
+                      size: 20,
+                    ),
+
+                    SizedBox(
+                      height: 10.0,
+                    ),
+
+                    //Long Description TEXT
+                    AppText(
+                      text:
+                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
+                      color: AppColors.mainTextColor,
+                    ),
                   ],
                 ),
+              ),
+            ),
+
+            Positioned(
+              bottom: 10,
+              left: 20,
+              right: 20,
+              child: Row(
+                children: [
+                  //Favourite Button
+                  AppButtons(
+                    size: 60,
+                    color: AppColors.textColor1,
+                    backgroundColor: Colors.white,
+                    borderColor: AppColors.textColor1,
+                    isIcon: true,
+                    icon: Icons.favorite_border,
+                  ),
+
+                  SizedBox(
+                    width: 20,
+                  ),
+
+                  ResponsiveButton(
+                    isResponsive: true,
+                  ),
+                ],
               ),
             ),
           ],
