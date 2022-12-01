@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/utils/app_large_text.dart';
 import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
@@ -16,7 +15,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   //List of images
   List images = ["intro_page1.jpg", "intro_page2.jpg", "intro_page3.jpg"];
 
-  final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +22,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       children: [
         PageView.builder(
             scrollDirection: Axis.vertical,
-            controller: _controller,
-            itemBuilder: (context, index) {
+            itemCount: images.length,
+            itemBuilder: (_, index) {
               return Container(
                 width: double.maxFinite,
                 height: double.maxFinite,
@@ -39,6 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 150, right: 20, left: 20),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,18 +71,28 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ResponsiveButton(),
                         ],
                       ),
+
+                      //Page Indicator
+                      Column(
+                        children: List.generate(3, (indexDots) {
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 2.0),
+                            width: 8,
+                            height: index == indexDots ? 25 : 8,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: index == indexDots
+                                  ? AppColors.mainColor
+                                  : AppColors.mainColor.withOpacity(0.3),
+                            ),
+                          );
+                        }),
+                      ),
                     ],
                   ),
                 ),
               );
             }),
-
-        //Page Indicator
-        Container(
-          alignment: Alignment(0.75, -0.55),
-          child: SmoothPageIndicator(
-              axisDirection: Axis.vertical, controller: _controller, count: 3),
-        ),
       ],
     ));
   }
