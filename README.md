@@ -7,3 +7,5 @@ IF you want to see the application yourself, Type flutter pub get after download
 ![Screenshot_1671460729](https://user-images.githubusercontent.com/97155560/208450804-a817d54f-e8bb-4079-a0ad-0ef496df700e.png)
 ![Screenshot_1671460733](https://user-images.githubusercontent.com/97155560/208450816-7a0aadc7-54ba-4043-aaf5-1c88fd85cdb6.png)
 ![Screenshot_1671460736](https://user-images.githubusercontent.com/97155560/208450827-6a93de6f-118c-4f73-8504-22e6312b459b.png)
+![Screenshot_1671461031](https://user-images.githubusercontent.com/97155560/208451571-fffab8d0-82ab-489a-b994-99383692a18f.png)
+![Screenshot_1671461034](https://user-images.githubusercontent.com/97155560/208451580-1e83b135-8691-4f40-9f66-539feb3fdb65.png)
