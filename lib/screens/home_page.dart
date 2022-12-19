@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/details_page.dart';
+import 'package:travel_app/screens/navPages/detail_page2.dart';
+import 'package:travel_app/screens/navPages/detail_page_3.dart';
 import 'package:travel_app/utils/app_large_text.dart';
 import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
@@ -18,6 +21,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "kayaking.png": "Kayaking",
     "snorkling.png": "Snorkling"
   };
+
+  var mountainImg = {
+    "mountain.jpg": "Pokhara",
+    "mountain2.jpg": "kathmandu",
+    "mountain3.jpg": "Mustang",
+  };
+
+  List pages = [DetailPage(), SecondPage(), ThirdPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -102,15 +113,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         scrollDirection: Axis.horizontal,
                         itemCount: 3,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: const EdgeInsets.only(right: 15, top: 10),
-                            width: 200,
-                            height: 300,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage("images/mountain.jpg"),
-                                  fit: BoxFit.cover),
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => pages[index]));
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(right: 15, top: 10),
+                              width: 200,
+                              height: 300,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "images/${mountainImg.keys.elementAt(index)}"),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
                           );
                         }),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/details_page.dart';
+import 'package:travel_app/screens/home_page.dart';
 import 'package:travel_app/screens/on_boarding_screen.dart';
 
 void main() {
@@ -13,6 +15,10 @@ class TravelApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: OnBoardingScreen(),
+      routes: {
+        "/home": (context) => HomePage(),
+        "/detailPage": (context) => DetailPage(),
+      },
     );
   }
 }

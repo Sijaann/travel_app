@@ -5,14 +5,14 @@ import 'package:travel_app/utils/app_text.dart';
 import 'package:travel_app/utils/colors.dart';
 import 'package:travel_app/utils/responsive_button.dart';
 
-class DetailPage extends StatefulWidget {
-  const DetailPage({super.key});
+class SecondPage extends StatefulWidget {
+  const SecondPage({super.key});
 
   @override
-  State<DetailPage> createState() => _DetailPageState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _SecondPageState extends State<SecondPage> {
   int gottenStars = 4;
   int selectedIndex = -1;
 
@@ -33,7 +33,7 @@ class _DetailPageState extends State<DetailPage> {
                 height: 350.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/mountain.jpg"),
+                      image: AssetImage("images/mountain2.jpg"),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -85,11 +85,11 @@ class _DetailPageState extends State<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppLargeText(
-                          text: "Pokhara",
+                          text: "Kathmandu",
                           color: Colors.black.withOpacity(0.8),
                         ),
                         AppLargeText(
-                          text: "\$250",
+                          text: "\$300",
                           color: AppColors.mainColor,
                         ),
                       ],
@@ -113,7 +113,7 @@ class _DetailPageState extends State<DetailPage> {
 
                         //Nepal, Kaski
                         AppText(
-                          text: "Nepal, Kaski",
+                          text: "Nepal, Kathmandu",
                           color: AppColors.textColor1,
                         ),
                       ],
