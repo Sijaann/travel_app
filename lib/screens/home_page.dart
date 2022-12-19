@@ -111,6 +111,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   children: [
                     ListView.builder(
                         scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
                         itemCount: 3,
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
