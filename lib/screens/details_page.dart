@@ -261,8 +261,9 @@ class _DetailPageState extends State<DetailPage> {
                       onPressed: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('AlertDialog Title'),
-                          content: const Text('AlertDialog description'),
+                          title: const Text('Confirm Booking'),
+                          content: const Text(
+                              'Do you want to confirm your booking?'),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () {

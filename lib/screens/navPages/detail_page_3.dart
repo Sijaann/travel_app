@@ -261,8 +261,9 @@ class _ThirdPageState extends State<ThirdPage> {
                       onPressed: () => showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('AlertDialog Title'),
-                          content: const Text('AlertDialog description'),
+                          title: const Text('Confirm Booking'),
+                          content:
+                              const Text('Do you want to confirm booking?'),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () {
